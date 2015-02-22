@@ -12,14 +12,13 @@ client = MongoClient()
 # Get database and collection
 db = client.undpkosovomosaic
 collection = db.mosaic
-utils = Utils()
 collection.remove({})
 
 def parse():
 
     print "Importing UNDP KOSOVO MOSAIC DATA."
 
-    with open('data/' + filename, 'rb') as csvfile:
+    with open('data/Mosaic-2012.csv', 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         line_number = 0
         for row in reader:
